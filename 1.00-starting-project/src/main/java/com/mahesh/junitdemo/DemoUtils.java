@@ -1,10 +1,14 @@
 package com.mahesh.junitdemo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
 public class DemoUtils {
 
-    private String academy = "Luv2Code Academy";
+    private String academy = "Mahesh Academy";
     private String academyDuplicate = academy;
     private String[] firstThreeLettersOfAlphabet = {"A", "B", "C"};
     private List<String> academyInList = List.of("luv", "2", "code");
@@ -60,4 +64,20 @@ public class DemoUtils {
         System.out.println("Sleeping over");
     }
 
+}
+
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+class Person {
+    private String name;
+    private Address address;
+}
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+class Address {
+    private String city;
 }
