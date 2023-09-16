@@ -4,9 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
 import java.time.Duration;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,7 +23,10 @@ class DemoUtilsTest {
     void add() {
         assertEquals(10, demoUtils.add(5, 5), "5+5 must be 10");
         assertEquals(6, demoUtils.add(10, -4));
+        assertEquals(-10, demoUtils.add(-5, -5));
         assertNotEquals(14, demoUtils.add(10, -4));
+        assertNotEquals(14, demoUtils.add(-10, -4));
+
     }
 
     @DisplayName("Checks null and not null")
