@@ -3,6 +3,7 @@ package com.mahesh.junitdemo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 
 import java.time.Duration;
 import java.util.List;
@@ -123,6 +124,13 @@ class DemoUtilsTest {
         assertTimeoutPreemptively(Duration.ofSeconds(3), () -> {
             demoUtils.checkTimeout();
         });
+    }
+
+    @DisplayName("Run this test if env variable is set and equals to particular value")
+    @EnabledIfEnvironmentVariable(named = "SERVER", matches = "DEV")
+    @Test
+    void runOnDevServer() {
+        System.out.println("Running this test on DEV server");
     }
 
 }
