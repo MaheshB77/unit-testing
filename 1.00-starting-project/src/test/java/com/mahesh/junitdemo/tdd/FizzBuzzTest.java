@@ -2,6 +2,9 @@ package com.mahesh.junitdemo.tdd;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class FizzBuzzTest {
@@ -32,5 +35,20 @@ class FizzBuzzTest {
     void ifNotDivisibleByThreeOrFive() {
         String expected = "1";
         assertEquals(expected, FizzBuzz.compute(1));
+    }
+
+    @DisplayName("Test the FizzBuzz with multiple inputs")
+    @ParameterizedTest(name = "input={0}, expectedOutput={1}")
+    @CsvSource({
+            "1,1",
+            "2,2",
+            "3,Fizz",
+            "4,4",
+            "5,Buzz",
+            "6,Fizz",
+            "7,7"
+    })
+    void testFizzFuzz(int input, String expectedOutput) {
+        assertEquals(expectedOutput, FizzBuzz.compute(input));
     }
 }
