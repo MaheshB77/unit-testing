@@ -14,4 +14,9 @@ public class ApplicationService {
         return square * number;
     }
 
+    public String numberToString(Integer number) {
+        String numString = applicationUtil.toString(number);
+        return "Number :: " + numString;
+    }
+
 }

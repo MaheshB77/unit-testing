@@ -3,6 +3,7 @@ package com.luv2code.component.utils;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
+import java.util.Objects;
 
 public class ApplicationUtil {
 
@@ -26,11 +27,12 @@ public class ApplicationUtil {
 
     }
 
-    public Object checkNull(Object obj) {
-        if ( obj != null ) {
-            return obj;
+    public String toString(Object obj) {
+        if (Objects.isNull(obj)) {
+            throw new RuntimeException("Object is null");
+        } else {
+            return obj.toString();
         }
-        return null;
     }
 
     public int square(int number) {
