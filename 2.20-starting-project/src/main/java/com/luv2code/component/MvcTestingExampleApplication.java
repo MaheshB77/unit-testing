@@ -1,8 +1,7 @@
 package com.luv2code.component;
 
-import com.luv2code.component.dao.ApplicationDao;
-import com.luv2code.component.models.CollegeStudent;
 import com.luv2code.component.service.ApplicationService;
+import com.luv2code.component.utils.ApplicationUtil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -22,15 +21,9 @@ public class MvcTestingExampleApplication {
 	}
 
 	/* New for Section 2.2 */
-	@Bean(name = "applicationDao")
-	ApplicationDao getApplicationDao() {
-		return new ApplicationDao();
-	}
-
-	@Bean(name = "collegeStudent")
-	@Scope(value = "prototype")
-	CollegeStudent getCollegeStudent() {
-		return new CollegeStudent();
+	@Bean(name = "applicationUtil")
+	ApplicationUtil getApplicationUtil() {
+		return new ApplicationUtil();
 	}
 
 }

@@ -2,25 +2,16 @@ package com.luv2code.component.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.luv2code.component.dao.ApplicationDao;
-
-import java.util.List;
+import com.luv2code.component.utils.ApplicationUtil;
 
 public class ApplicationService {
 
     @Autowired
-    private ApplicationDao applicationDao;
+    private ApplicationUtil applicationUtil;
 
-    public double addGradeResultsForSingleClass(List<Double> numbers) {
-        return applicationDao.addGradeResultsForSingleClass(numbers);
-    }
-
-    public double findGradePointAverage (List<Double> grades ) {
-        return applicationDao.findGradePointAverage(grades);
-    }
-
-    public Object checkNull(Object obj) {
-        return applicationDao.checkNull(obj);
+    public int cube(int number) {
+        int square = applicationUtil.square(number);
+        return square * number;
     }
 
 }

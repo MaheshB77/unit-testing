@@ -1,10 +1,10 @@
-package com.luv2code.component.dao;
+package com.luv2code.component.utils;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
 
-public class ApplicationDao {
+public class ApplicationUtil {
 
     public double addGradeResultsForSingleClass(List<Double> grades) {
         double result = 0;
@@ -31,5 +31,9 @@ public class ApplicationDao {
             return obj;
         }
         return null;
+    }
+
+    public int square(int number) {
+        return number * number;
     }
 }
