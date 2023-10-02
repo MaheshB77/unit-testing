@@ -1,15 +1,14 @@
 package com.luv2code.test;
 
 import com.luv2code.component.MvcTestingExampleApplication;
-import com.luv2code.component.utils.ApplicationUtil;
 import com.luv2code.component.service.ApplicationService;
+import com.luv2code.component.utils.ApplicationUtil;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.util.ReflectionTestUtils;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -50,5 +49,12 @@ public class MockAnnotationTest {
         Integer inputNumber = 2;
         when(applicationUtil.toString(inputNumber)).thenReturn(inputNumber.toString());
         assertEquals("Number :: " + inputNumber, applicationService.numberToString(inputNumber));
+    }
+
+    @DisplayName("Test private method")
+    @Test
+    public void sum() {
+        Object result = ReflectionTestUtils.invokeMethod(applicationService, "sum", 2, 4);
+        assertEquals(6, result);
     }
 }
