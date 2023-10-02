@@ -1,5 +1,11 @@
 package com.luv2code.springmvc.models;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class GradebookCollegeStudent extends CollegeStudent{
 
     private int id;
@@ -13,24 +19,6 @@ public class GradebookCollegeStudent extends CollegeStudent{
     public GradebookCollegeStudent(int id, String firstname, String lastname, String emailAddress, StudentGrades studentGrades) {
         super(firstname, lastname, emailAddress);
         this.studentGrades = studentGrades;
-        this.id = id;
-    }
-
-    public StudentGrades getStudentGrades() {
-        return studentGrades;
-    }
-
-    public void setStudentGrades(StudentGrades studentGrades) {
-        this.studentGrades = studentGrades;
-    }
-
-    @Override
-    public int getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(int id) {
         this.id = id;
     }
 }

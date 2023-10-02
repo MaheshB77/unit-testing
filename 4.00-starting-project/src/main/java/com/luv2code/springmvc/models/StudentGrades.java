@@ -1,5 +1,7 @@
 package com.luv2code.springmvc.models;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
@@ -7,6 +9,8 @@ import java.math.RoundingMode;
 import java.util.List;
 
 @Component
+@Getter
+@Setter
 public class StudentGrades {
 
     List<Grade> mathGradeResults;
@@ -37,34 +41,4 @@ public class StudentGrades {
 
     }
 
-    public List<Grade> getMathGradeResults() {
-        return mathGradeResults;
-    }
-
-    public void setMathGradeResults(List<Grade> mathGradeResults) {
-        this.mathGradeResults = mathGradeResults;
-    }
-
-    public List<Grade> getScienceGradeResults() {
-        return scienceGradeResults;
-    }
-
-    public void setScienceGradeResults(List<Grade> scienceGradeResults) {
-        this.scienceGradeResults = scienceGradeResults;
-    }
-
-    public List<Grade> getHistoryGradeResults() {
-        return historyGradeResults;
-    }
-
-    public void setHistoryGradeResults(List<Grade> historyGradeResults) {
-        this.historyGradeResults = historyGradeResults;
-    }
-
-    @Override
-    public String toString() {
-        return "StudentGrades{" +
-                "mathGradeResults=" + mathGradeResults +
-                '}';
-    }
 }
