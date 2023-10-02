@@ -6,6 +6,7 @@ import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.test.context.jdbc.Sql;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -57,7 +58,8 @@ class StudentServiceTest {
 
     @DisplayName("Get all students")
     @Test
+    @Sql("/setup.sql")
     public void findAll() {
-        assertEquals(1, studentService.findAll().size());
+        assertEquals(5, studentService.findAll().size());
     }
 }
